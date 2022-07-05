@@ -18,8 +18,6 @@ const initialUser = {
 
 //리듀서
 const checkLogin = (state = initialUser, action) => {
-	console.log("Citonsdf");
-	console.log(action);
 	switch (action.type) {
 		case USER_CHECK:
 			state.isLogin = false;

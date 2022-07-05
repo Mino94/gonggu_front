@@ -11,21 +11,22 @@ import { useEffect, useRef, useState } from "react";
 import QnaReply from "./QnaReply";
 import { answerSelect } from "../../../redux/qna/answer";
 
-const QnaList = ({ chckId, board }) => {
+const QnaList = ({ chckId, board, load }) => {
   const qna = useSelector((state) => state.qna);
-  const answer = useSelector(state => state.answer);
+  const answer = useSelector((state) => state.answer);
   const dispatch = useDispatch();
 
   useEffect(() => {
-	dispatch(qnaSelect());
+    dispatch(qnaSelect());
   }, []);
 
   useEffect(() => {
-	if((!qna.loading && qna.success) || (!answer.loading && answer.success)) {
-    	dispatch(qnaSelect());
-		dispatch(answerSelect());
-	}
+    if((!qna.loading && qna.success) || (!answer.loading && answer.success)) {
+        dispatch(qnaSelect());
+        dispatch(answerSelect());
+    }
   }, [qna, answer]);
+  
 
   return (
     <Stack gap={2}>

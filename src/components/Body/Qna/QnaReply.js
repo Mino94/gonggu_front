@@ -1,9 +1,7 @@
 import { useCallback, useState } from "react";
 import { Button, Form, InputGroup } from "react-bootstrap";
 import { answerCreate } from "../../../redux/qna/answer";
-import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 const QnaReply = ({ index }) => {
   const [value, setValue] = useState("");
@@ -24,7 +22,7 @@ const QnaReply = ({ index }) => {
   return (
     <>
       {visible ? (
-        <div></div>
+        null
       ) : (
         <Form className="answerInsert" onSubmit={handleSubmit}>
           <InputGroup className="mb-3">

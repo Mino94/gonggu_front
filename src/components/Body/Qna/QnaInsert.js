@@ -1,15 +1,9 @@
 import { useCallback, useState } from "react";
 import { Button, Form, InputGroup } from "react-bootstrap";
-import { qnaCreate } from "../../../redux/qna/qna";
-import { useSelector, useDispatch } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
-import { useEffect } from "react";
 
 const QnaInsert = ({ onInsert }) => {
   const [value, setValue] = useState("");
-  const [qnaValues, setQnaValue] = useState([]);
   const [disabled, setDisabled] = useState(false);
-  const dispatch = useDispatch();
 
   const onChange = useCallback((e) => {
     setValue(e.target.value);
